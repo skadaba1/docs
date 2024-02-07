@@ -1,0 +1,99 @@
+openapi: 3.0.0
+info:
+  title: Event Tracking API
+  description: API for tracking events
+  version: "1.0.0"
+servers:
+  - url: https://warm-bastion-76053-a1e76fa98e82.herokuapp.com/
+paths:
+  /track/:
+    post:
+      summary: Track an event
+      description: Accepts a JSON payload to track an event with required event_name and event_type.
+      operationId: trackEvent
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                type: object
+                required:
+                  - event_name
+                  - event_type
+                properties:
+                  event_name:
+                    type: string
+                    example: "Test"
+                  event_type:
+                    type: string
+                    example: "llm"
+                  properties:
+                    type: object
+                    properties:
+                      timestamp:
+                        type: string
+                        format: "date-time"
+                        example: "2024-01-11 05:27:00"
+                      cost:
+                        type: string
+                        example: "0.000254"
+                      environment:
+                        type: string
+                        example: "development"
+                      input_content:
+                        type: string
+                        example: "[{\"role\":\"system\",\"content\":\"You are coding assistant...\"}]"
+                      input_token_count:
+                        type: string
+                        example: "218"
+                      latency:
+                        type: string
+                        example: "1.2202566"
+                      llm_in_use:
+                        type: string
+                        example: "gpt-3.5-turbo-1106"
+                      mp_processing_time_ms:
+                        type: integer
+                        format: int64
+                        example: 1706834223502
+                      organization_id:
+                        type: string
+                        example: "30988ef6-3d78-4197-a914-a96539465910"
+                      organization_name:
+                        type: string
+                        example: "Dec 12 Windows"
+                      output_content:
+                        type: string
+                        example: "{\n  \"category\": \"order_date\",\n  \"y\": \"total_sales\"\n}"
+                      output_token_count:
+                        type: string
+                        example: "18"
+                      role:
+                        type: string
+                        example: "product"
+                      user_id:
+                        type: string
+                        example: "052bf01d-c559-46b4-9a9b-2f10c166fe81"
+                      user_name:
+                        type: string
+                        example: "Nate"
+            examples:
+              trackEventExample:
+                value:
+                  - event_name: "Test"
+                    event_type: "llm"
+                    properties:
+                      timestamp: "2024-01-11 05:27:00"
+                      # Other properties are optional
+      responses:
+        '200':
+          description: Event tracked successfully.
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "Event tracked successfully."
+        '400':
+          description: Invalid request.

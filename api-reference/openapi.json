@@ -46,8 +46,8 @@
                           "example": "2024-01-11 05:27:00"
                         },
                         "cost": {
-                          "type": "string",
-                          "example": "0.000254"
+                          "type": "number",
+                          "example": 0.000254
                         },
                         "environment": {
                           "type": "string",
@@ -58,12 +58,13 @@
                           "example": "[{\"role\":\"system\",\"content\":\"You are coding assistant...\"}]"
                         },
                         "input_token_count": {
-                          "type": "string",
-                          "example": "218"
+                          "type": "integer",
+                          "format": "int32",
+                          "example": 218
                         },
                         "latency": {
-                          "type": "string",
-                          "example": "1.2202566"
+                          "type": "number",
+                          "example": 1.2202566
                         },
                         "llm_in_use": {
                           "type": "string",
@@ -87,8 +88,9 @@
                           "example": "{\n  \"category\": \"order_date\",\n  \"y\": \"total_sales\"\n}"
                         },
                         "output_token_count": {
-                          "type": "string",
-                          "example": "18"
+                          "type": "integer",
+                          "format": "int32",
+                          "example": 18
                         },
                         "role": {
                           "type": "string",
@@ -101,6 +103,18 @@
                         "user_name": {
                           "type": "string",
                           "example": "Nate"
+                        },
+                        "tome_to_first_token": {
+                          "type": "number",
+                          "example": 3.2
+                        },
+                        "chat_id": {
+                          "type": "string",
+                          "example": "chat_1"
+                        },
+                        "data_source_id": {
+                          "type": "string",
+                          "example": "data_source_id_1"
                         }
                       }
                     }

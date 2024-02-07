@@ -105,7 +105,7 @@
                           "type": "string",
                           "example": "Nate"
                         },
-                        "tome_to_first_token": {
+                        "time_to_first_token": {
                           "type": "number",
                           "example": 3.2
                         },

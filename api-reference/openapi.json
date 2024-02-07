@@ -35,6 +35,7 @@
                     },
                     "event_type": {
                       "type": "string",
+                      "enum": ["llm", "product"],
                       "example": "llm"
                     },
                     "properties": {
@@ -126,18 +127,26 @@
         },
         "responses": {
           "200": {
-            "description": "Event tracked successfully.",
+            "description": "Event tracked successfully!",
             "content": {
               "text/plain": {
                 "schema": {
                   "type": "string",
-                  "example": "Event tracked successfully."
+                  "example": "Event tracked successfully!"
                 }
               }
             }
           },
           "400": {
-            "description": "Invalid request."
+            "description": "Invalid request!",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string",
+                  "example": "Invalid request!"
+                }
+              }
+            }
           }
         }
       }

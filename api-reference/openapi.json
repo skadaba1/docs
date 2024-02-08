@@ -7,7 +7,7 @@
   },
   "servers": [
     {
-      "url": "https://warm-bastion-76053-a1e76fa98e82.herokuapp.com/"
+      "url": "https://rova-backend-service-2102-ccb6f1ef-vhmb0ldj.onporter.run/track/"
     }
   ],
   "paths": {

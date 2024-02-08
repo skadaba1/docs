@@ -7,7 +7,7 @@
   },
   "servers": [
     {
-      "url": "https://rova-backend-service-2102-ccb6f1ef-vhmb0ldj.onporter.run/track/"
+      "url": "https://rova-backend-service-2102-ccb6f1ef-vhmb0ldj.onporter.run/"
     }
   ],
   "paths": {
